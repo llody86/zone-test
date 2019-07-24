@@ -1,0 +1,52 @@
+.filters {
+    @include element('container') {
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    @include element('genre-container') {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 200px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    @include element('genre-item') {
+        margin: 10px 10px;
+        display: inline-flex;
+        align-items: center;
+        label {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        input[type=checkbox] {
+            cursor: pointer;
+        }
+    }
+    
+    @include element('rating-container') {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0px;
+    }
+
+    @include element('text') {
+        margin: 0px;
+        padding: 0px 5px;
+
+        @include modifier('bold') {
+            font-weight: 700;
+        }
+
+    }
+}

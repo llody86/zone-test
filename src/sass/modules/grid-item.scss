@@ -1,0 +1,111 @@
+.grid-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    background-color: azure;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: scale(0.95, 0.95);
+    
+    @include breakpoint('large'){
+        &:hover {
+            transform: scale(1,1);
+            -webkit-box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.75);
+        }
+    }
+
+    @include element('info-container') {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    @include element('genre-list') {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        position: absolute;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    @include element('colour-overlay') {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0.8) 99%);
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 80%,rgba(0,0,0,0.8) 99%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 80%,rgba(0,0,0,0.8) 99%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 );
+        transition: opacity 0.3s;
+        opacity: 1;
+    }
+
+    @include element('text') {
+        font-weight: 700;
+        color: white;
+        text-align: center;
+        margin-bottom: 0px;
+        margin: 0px;
+
+        @include modifier('title') {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s;
+            position: absolute;
+            top: 80%;
+            left: auto;
+            text-shadow: 2px 2px #000;
+
+            @include breakpoint('medium') {
+                opacity: 1;
+                top: 20%;
+            }
+        }
+
+        @include modifier('genre') {
+            opacity: 0;
+            transition: opacity 0.3s;
+            background-color: rgba(0, 0, 0, 0.75);
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-bottom: 2px;
+
+            @include breakpoint('medium') {
+                opacity: 1;
+            }
+        }
+    }
+    
+    @include element('image-container') {
+        width: 100%;
+        height: 100%;
+    }
+
+    @include element('image') {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include breakpoint('medium') {
+        .grid-item__text--genre {
+            opacity: 1;
+        }
+    }
+
+}

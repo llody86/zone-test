@@ -1,0 +1,35 @@
+$brand-colours: (
+    'primary': #0c1c4e,
+    'secondary': rgba(0, 0, 0, 0.75),
+    'tertiary': #0c1c4e,
+    'supplement': #2cc94e
+);
+
+$breakpoints: (
+  'small':  ( min-width:  480px ),
+  'medium': ( min-width:  768px ),
+  'large':  ( min-width: 992px ),
+  'x-large':  ( min-width: 1200px )
+) !default;
+
+body * {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: map-get($brand-colours, 'primary');
+}
+
+h3 {
+    margin: 40px 0 0;
+}
+
+label {
+    color: map-get($brand-colours, 'primary');
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+}
